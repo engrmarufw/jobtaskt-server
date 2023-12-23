@@ -261,9 +261,9 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-    res.send('AIST making server is running')
+    res.send('jobtask making server is running')
 })
 
 app.listen(port, () => {
-    console.log(`AIST Server is running on port: ${port}`)
+    console.log(`jobtask Server is running on port: ${port}`)
 })
