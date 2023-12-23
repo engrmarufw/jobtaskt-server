@@ -10,8 +10,8 @@ const multer = require('multer');
 const port = process.env.PORT || 5000;
 // middleware
 app.use(express.json());
-app.use(cors({ origin: process.env.REMOTE_CLIENT_APP, credentials: true }));
-// app.use(cors());
+// app.use(cors({ origin: process.env.REMOTE_CLIENT_APP, credentials: true }));
+app.use(cors());
 
 const uri = process.env.MONGODB_URL;
 const upload = multer();
