@@ -184,8 +184,14 @@ async function run() {
             res.send(result);
         })
         app.get('/carts', async (req, res) => {
-            const carts = await cartsCollection.find().toArray();
-            res.send(carts);
+            const email = req.query.email;
+            if (email) {
+                query = {
+                    email: email,
+                };
+                const carts = await cartsCollection.find(query).toArray();
+                res.send(carts);
+            }
         });
         app.delete('/carts/:id', async (req, res) => {
             const id = req.params.id;
